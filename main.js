@@ -9,7 +9,7 @@ function createWindow() {
         width: 500,
         height: 500,
         resizable: false,
-        icon: path.join(__dirname, 'resources', 'images', 'favicon', 'favicon.ico'), // 아이콘 경로 지정
+        icon: path.join(app.getAppPath(), 'icon.ico'),
         webPreferences: {
             preload: path.join(__dirname, 'renderer.js'),
             nodeIntegration: true,

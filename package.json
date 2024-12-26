@@ -5,32 +5,56 @@
     "main": "main.js",
     "scripts": {
         "start": "electron .",
-        "build": "electron-packager . imageZIP --platform=win32 --arch=x64 --out=dist --overwrite"
+        "build": "electron-builder",
+        "postinstall": "node postinstall.js"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
         "del": "^6.0.0",
         "electron": "^25.3.0",
+        "electron-builder": "^25.1.8",
         "electron-packager": "^17.1.2",
         "gulp": "^5.0.0",
         "gulp-imagemin": "^7.1.0",
         "gulp-newer": "^1.4.0"
     },
     "build": {
-        "asar": true,
+        "appId": "com.example.imagezip",
+        "productName": "imageZIP",
+        "directories": {
+            "output": "dist",
+            "buildResources": "resources"
+        },
         "files": [
+            "resources/**/*",
+            "icon.ico",
             "main.js",
             "renderer.js",
             "index.html",
-            "resources/**/*",
             "package.json"
         ],
         "extraResources": [
             {
-                "from": "resources/",
-                "to": "resources"
+                "from": "icon.ico",
+                "to": "icon.ico"
             }
-        ]
+        ],
+        "win": {
+            "icon": "resources/icons/icon.ico",
+            "signAndEditExecutable": false
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true,
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true,
+            "shortcutName": "imageZIP",
+            "installerIcon": "resources/icons/icon.ico",
+            "uninstallerIcon": "resources/icons/icon.ico",
+            "license": "resources/LICENSE.txt"
+        },
+        "afterPack": "./afterPack.js",
+        "compression": "maximum"
     }
 }
