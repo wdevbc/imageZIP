@@ -1,0 +1,36 @@
+{
+    "name": "image-zip",
+    "version": "1.0.0",
+    "description": "Image compressor with GUI",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-packager . imageZIP --platform=win32 --arch=x64 --out=dist --overwrite"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "del": "^6.0.0",
+        "electron": "^25.3.0",
+        "electron-packager": "^17.1.2",
+        "gulp": "^5.0.0",
+        "gulp-imagemin": "^7.1.0",
+        "gulp-newer": "^1.4.0"
+    },
+    "build": {
+        "asar": true,
+        "files": [
+            "main.js",
+            "renderer.js",
+            "index.html",
+            "resources/**/*",
+            "package.json"
+        ],
+        "extraResources": [
+            {
+                "from": "resources/",
+                "to": "resources"
+            }
+        ]
+    }
+}
