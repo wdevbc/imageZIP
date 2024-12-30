@@ -2,6 +2,18 @@
 
 image-zip project
 
+Update History
+
+# 1.1v
+
+-   gulp resources remove
+-   sharp add
+-   folder open checkbox add
+
+# 1.0v
+
+project init
+
 node.js 20.18.1v
 
 -   npm run build

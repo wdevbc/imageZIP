@@ -1,23 +1,23 @@
 {
     "name": "image-zip",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Image compressor with GUI",
     "main": "main.js",
     "scripts": {
         "start": "electron .",
-        "build": "electron-builder",
-        "postinstall": "node postinstall.js"
+        "build": "electron-builder"
     },
     "author": "",
     "license": "ISC",
+    "dependencies": {
+        "glob": "^11.0.0",
+        "lru-cache": "^11.0.2",
+        "rimraf": "^6.0.1",
+        "sharp": "^0.32.5"
+    },
     "devDependencies": {
-        "del": "^6.0.0",
         "electron": "^25.3.0",
-        "electron-builder": "^25.1.8",
-        "electron-packager": "^17.1.2",
-        "gulp": "^5.0.0",
-        "gulp-imagemin": "^7.1.0",
-        "gulp-newer": "^1.4.0"
+        "electron-builder": "^25.1.8"
     },
     "build": {
         "appId": "com.example.imagezip",
@@ -28,20 +28,13 @@
         },
         "files": [
             "resources/**/*",
-            "icon.ico",
             "main.js",
             "renderer.js",
             "index.html",
             "package.json"
         ],
-        "extraResources": [
-            {
-                "from": "icon.ico",
-                "to": "icon.ico"
-            }
-        ],
         "win": {
-            "icon": "resources/icons/icon.ico",
+            "icon": "resources/icon.ico",
             "signAndEditExecutable": false
         },
         "nsis": {
@@ -50,9 +43,7 @@
             "createDesktopShortcut": true,
             "createStartMenuShortcut": true,
             "shortcutName": "imageZIP",
-            "installerIcon": "resources/icons/icon.ico",
-            "uninstallerIcon": "resources/icons/icon.ico",
-            "license": "resources/LICENSE.txt"
+            "installerSidebar": "resources/installer-sidebar.bmp"
         },
         "afterPack": "./afterPack.js",
         "compression": "maximum"

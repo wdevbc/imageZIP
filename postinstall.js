@@ -8,11 +8,6 @@ const iconPath = path.resolve(__dirname, 'resources', 'icons', 'icon.ico');
 // rcedit 실행 경로
 const rceditPath = path.resolve(process.env.NVM_SYMLINK || '', 'node_modules', 'rcedit', 'bin', 'rcedit.exe');
 
-// 디버깅 로그 추가
-console.log('Unpacked Executable Path:', unpackedExePath);
-console.log('Icon Path:', iconPath);
-console.log('RCEdit Path:', rceditPath);
-
 // 아이콘 업데이트 함수
 function updateIcon(exePath) {
     try {

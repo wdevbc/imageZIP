@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>이미지 압축 1.0v | wdevbc@gmail.com</title>
+        <title>이미지 압축 1.1v | wdevbc@gmail.com</title>
 
         <!-- 파비콘 추가 -->
         <link rel="apple-touch-icon" sizes="57x57" href="/resources/icons/apple-icon-57x57.png" />
@@ -29,8 +29,14 @@
                 text-decoration: unset;
                 font-weight: bold;
             }
-            .contact {
-                font-size: 1.5rem;
+            .contact,
+            .github {
+                font-size: 1.2rem;
+                transition: all ease-in-out 0.3s;
+            }
+            .contact:hover,
+            .github:hover {
+                color: #476ce7;
             }
             .flex-box {
                 display: flex;
@@ -40,14 +46,36 @@
             .wrap {
                 padding: 0 20px;
             }
+            .compress {
+                width: 100%;
+                margin-top: 20px;
+                border-color: transparent;
+                background-color: black;
+                color: #fff;
+                font-weight: bold;
+                font-size: 20px;
+                border-radius: 20px;
+                line-height: 50px;
+                cursor: pointer;
+                transition: all ease-in-out 0.3s;
+            }
+            .compress:hover {
+                background-color: #476ce7;
+            }
+            .status {
+                font-size: 14px;
+            }
         </style>
     </head>
     <body>
         <div class="wrap">
             <header>
                 <div class="flex-box">
-                    <h1>이미지 압축 1.0v</h1>
-                    <a href="mailto:wdevbc@gmail.com" class="contact">Contact</a>
+                    <h1>이미지 압축 1.1v</h1>
+                    <div class="flex-inbox">
+                        <a href="https://github.com/wdevbc/imageZIP" class="github" target="_blank">Github</a>
+                        <a href="mailto:wdevbc@gmail.com" class="contact">Contact</a>
+                    </div>
                 </div>
                 <div class="content">
                     <strong>웹 최적화를 위한 품질 75를 권장합니다.</strong>
@@ -63,10 +91,14 @@
             </div>
             <div>
                 <p>품질: <span id="quality-value">75%</span></p>
-                <input id="quality-slider" type="range" min="0" max="100" value="75" />
+                <input id="quality-slider" class="quality-slider" type="range" min="0" max="100" value="75" />
             </div>
-            <button id="compress">압축하기</button>
-            <p id="status"></p>
+            <div>
+                <input type="checkbox" id="open-folder" />
+                <label for="open-folder">압축 완료 후 대상 폴더 열기</label>
+            </div>
+            <button id="compress" class="compress">압축하기</button>
+            <p id="status" class="status"></p>
             <script src="renderer.js"></script>
         </div>
     </body>
