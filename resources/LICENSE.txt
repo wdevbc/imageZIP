@@ -1,2 +1,11 @@
-GITHUB https://github.com/wdevbc/imageZIP ?? ????? ?? ? ????.
-MIT ???? ???.
+This program is distributed under the MIT License.
+If you're interested in accessing the source code, feel free to explore our GitHub repository:
+GitHub - https://github.com/wdevbc/imageZIP
+
+Dive in, contribute, or simply take a closer look at how the program works. Happy coding! 
+
+이 프로그램은 MIT 라이센스에 따라 배포됩니다.
+프로그램 소스 코드에 관심이 있으시다면 GitHub 저장소를 확인해 보세요:
+GitHub - https://github.com/wdevbc/imageZIP
+
+살펴보시고, 기여하거나 프로그램 작동 방식을 자세히 알아보세요. 즐거운 코딩 되세요!
